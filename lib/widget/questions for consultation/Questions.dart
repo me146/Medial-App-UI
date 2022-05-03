@@ -27,6 +27,7 @@ class Questionss extends StatelessWidget {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
                 width: 10,
@@ -34,7 +35,7 @@ class Questionss extends StatelessWidget {
               Flexible(
                 child: Text(
                   questions.question,
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.start,
                   style: TextStyle(
                     fontSize: 20,
                     color: Color(0xFF404D53),
@@ -42,10 +43,14 @@ class Questionss extends StatelessWidget {
                   ),
                 ),
               ),
+              // SizedBox(
+              //   width: MediaQuery.of(context).size.width * 0.6,
+              // ),
+              Spacer(),
               Container(
                 height: 50,
                 width: 40,
-                margin: EdgeInsets.only(right: 10, bottom: 10),
+                margin: EdgeInsets.only(right: 0, bottom: 10),
                 alignment: Alignment.center,
                 child: Icon(
                   Icons.message_outlined,

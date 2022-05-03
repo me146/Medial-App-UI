@@ -53,7 +53,13 @@ dev_dependencies:
   syncfusion_flutter_charts:
   # carousel_slider:
   scrollable_positioned_list:
-# For information on the generic Dart part of this file, see the
+  getwidget:
+  table_calendar:
+  graphic:
+  syncfusion_flutter_calendar:
+  flutter_week_view:
+  badges:
+  # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.

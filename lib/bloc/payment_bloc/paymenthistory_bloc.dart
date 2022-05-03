@@ -7,7 +7,7 @@ part 'paymenthistory_state.dart';
 class Reson {
   String name;
   String resons;
-  int Payment;
+  double Payment;
   DateTime date;
 
   Reson(this.Payment, this.date, this.name, this.resons);

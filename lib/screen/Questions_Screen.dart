@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:medicalappui/bloc/Questions_bloc/questions_bloc.dart';
+import 'package:medicalappui/widget/TitaleCard.dart';
 import 'package:medicalappui/widget/add.dart';
 import 'package:medicalappui/widget/questions%20for%20consultation/Questions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,19 +73,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      margin: EdgeInsets.only(left: 10),
-                      child: Text(
-                        "Resent questions",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Color(0xFF404D53),
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                    TitalCard("Resent questions"),
+                    
                     SizedBox(
                       height: 10,
                     ),

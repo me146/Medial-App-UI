@@ -3,60 +3,42 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:medicalappui/bloc/PationtAppoiment/pationtappoiment_bloc.dart';
+import 'package:medicalappui/widget/delayanimationcard.dart';
+import 'package:delayed_widget/delayed_widget.dart';
 import 'package:dotted_line/dotted_line.dart';
-import 'package:medicalappui/bloc/payment_bloc/paymenthistory_bloc.dart';
 
-class PaymentHistory extends StatelessWidget {
-  Reson reson;
-  PaymentHistory(this.reson, {Key? key}) : super(key: key);
+class PationAppoiment extends StatelessWidget {
+  GetAllApoiment appoiment;
+  PationAppoiment(this.appoiment);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          Row(
-            children: [
-              SizedBox(
-                width: 15,
-              ),
-              Icon(Icons.join_inner),
-              SizedBox(
-                width: 10,
-              ),
-              Text(reson.name)
-            ],
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 15,
-              ),
+          ListTile(
+            leading: Image.asset(
+              appoiment.image,
+              fit: BoxFit.fill,
+            ),
+            title: Delaycard(
               Text(
-                reson.resons,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFF404D53),
-                  fontWeight: FontWeight.w400,
-                ),
+                appoiment.name,
+                style: TextStyle(color: Colors.blue),
               ),
-              Spacer(),
+              DelayedAnimations.SLIDE_FROM_TOP,
+            ),
+            subtitle: Delaycard(
               Text(
-                "€${reson.Payment}",
+                appoiment.appoimentReson,
                 style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFF404D53),
-                  fontWeight: FontWeight.w400,
-                ),
+                    fontSize: 20,
+                    color: Color(0xFF404D53),
+                    fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                width: 15,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
+              DelayedAnimations.SLIDE_FROM_BOTTOM,
+            ),
           ),
           Row(
             children: [
@@ -65,19 +47,19 @@ class PaymentHistory extends StatelessWidget {
               ),
               Icon(
                 Icons.access_time,
-                size: 20,
+                size: 25,
               ),
               SizedBox(
                 width: 10,
               ),
               Text(
-                "${dateFormatter(reson.date)}",
-                style: TextStyle(color: Color(0xFF404D53), fontSize: 15),
+                "${dateFormatter(appoiment.time)}",
+                style: TextStyle(color: Color(0xFF404D53), fontSize: 20),
               ),
               Spacer(),
               Icon(
                 Icons.keyboard_control,
-                size: 25,
+                size: 30,
               ),
               SizedBox(
                 width: 25,
@@ -85,11 +67,11 @@ class PaymentHistory extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
-          DottedLine(lineLength: 340, dashColor: Colors.grey),
+          DottedLine(lineLength: 330),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
         ],
       ),
