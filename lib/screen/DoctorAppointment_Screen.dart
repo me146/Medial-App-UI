@@ -7,7 +7,6 @@ import 'package:medicalappui/widget/drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 import '../bloc/calendar_bloc/calendar_bloc.dart';
 import '../widget/appbar.dart';
 import 'package:calendar_timeline/calendar_timeline.dart';
@@ -61,43 +60,23 @@ class _DoctorAppointmentState extends State<DoctorAppointment> {
                 margin: EdgeInsets.all(10),
                 child: SfCartesianChart(
                   plotAreaBorderWidth: 0,
-                  // primaryXAxis: NumericAxis(
-                  //   name: "dfg",
-                  //   //Hide the gridlines of x-axis
-                  //   majorGridLines: MajorGridLines(width: 0),
-                  //   //Hide the axis line of x-axis
-                  //   axisLine: AxisLine(width: 0),
-                  // ),
                   borderWidth: 0,
                   primaryYAxis: NumericAxis(
-
-                      //Hide the gridlines of y-axis
                       majorGridLines: MajorGridLines(width: 0),
                       isVisible: false,
-                      //Hide the axis line of y-axis
                       axisLine: AxisLine(width: 0)),
                   enableSideBySideSeriesPlacement: false,
-                  // backgroundColor: Colors.yellow,
                   primaryXAxis:
                       CategoryAxis(isVisible: false, arrangeByIndex: false),
-                  // Chart title
-                  // title: ChartTitle(text: 'Half yearly sales analysis'),
-                  // Enable legend
-                  // legend: Legend(
-                  //   isVisible: true,
-                  // ),
-                  // Enable tooltip
                   tooltipBehavior: TooltipBehavior(enable: true),
                   series: <ChartSeries<_SalesData, String>>[
                     SplineSeries<_SalesData, String>(
-                        // dashArray: [],
                         opacity: 0.5,
                         dataSource: sdata,
                         color: Colors.green,
                         xValueMapper: (_SalesData sales, _) => sales.year,
                         yValueMapper: (_SalesData sales, _) => sales.sales,
                         name: 'Sales',
-                        // Enable data label
                         dataLabelSettings: DataLabelSettings(isVisible: false)),
                     SplineSeries<_SalesData, String>(
                         dataSource: data,
@@ -105,7 +84,6 @@ class _DoctorAppointmentState extends State<DoctorAppointment> {
                         xValueMapper: (_SalesData sales, _) => sales.year,
                         yValueMapper: (_SalesData sales, _) => sales.sales,
                         name: 'Sales',
-                        // Enable data label
                         dataLabelSettings: DataLabelSettings(isVisible: false))
                   ],
                 ),
@@ -171,7 +149,7 @@ class _DoctorAppointmentState extends State<DoctorAppointment> {
                             firstDate: DateTime(2020, 1, 1),
                             lastDate: DateTime(2026, 11, 20),
                             onDateSelected: (date) {
-                              c.add(ShowData(date!));
+                              c.add(ShowData(date));
                             },
                             leftMargin: 10,
                             monthColor: Colors.blueGrey,

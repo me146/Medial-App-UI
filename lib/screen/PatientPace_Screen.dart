@@ -101,7 +101,8 @@ class _PatientPaceState extends State<PatientPace> {
                         child: ScrollablePositionedList.builder(
                           itemCount: months.length,
                           scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
+                          // shrinkWrap: true,
+                          
                           itemBuilder: (context, index) {
                             return Container(
                               alignment: Alignment.center,

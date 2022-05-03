@@ -8,7 +8,6 @@ import 'package:medicalappui/widget/delayanimationcard.dart';
 
 import '../../bloc/patient_bloc/doctordashboard_bloc.dart';
 
-
 class DoctorDashboard extends StatelessWidget {
   Patient patient;
   DoctorDashboard(this.patient, {Key? key}) : super(key: key);
@@ -60,7 +59,7 @@ class DoctorDashboard extends StatelessWidget {
             height: 10,
           ),
           ListTile(
-            leading: Image.asset("asset/contact.png"),
+            leading: Image.asset("asset/doctor.png"),
             title: Delaycard(
               Text(
                 patient.name,

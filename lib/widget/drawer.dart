@@ -41,7 +41,7 @@ class Drawers extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                        "asset/contact.png",
+                        "asset/doctor.png",
                       ),
                     ),
                     shape: BoxShape.circle,
